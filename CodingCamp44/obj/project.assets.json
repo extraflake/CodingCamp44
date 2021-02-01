@@ -7590,11 +7590,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "projectUniqueName": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
       "projectName": "CodingCamp44",
-      "projectPath": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "projectPath": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
       "packagesPath": "C:\\Users\\NaufalAj\\.nuget\\packages\\",
-      "outputPath": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\obj\\",
+      "outputPath": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
