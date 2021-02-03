@@ -1,5 +1,6 @@
 ﻿using CodingCamp44.Handler;
 using CodingCamp44.Repositories.Data;
+using CodingCamp44.Repositories.Interfaces;
 using CodingCamp44.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +18,7 @@ namespace CodingCamp44.Controllers
     {
         private readonly IJWTAuthenticationManager jWTAuthenticationManager;
         private readonly AccountRepository accountRepository;
-        public AuthController(IJWTAuthenticationManager jWTAuthenticationManager, AccountRepository accountRepository)
+        public AuthController(IJWTAuthenticationManager jWTAuthenticationManager, AccountRepository accountRepository) 
         {
             this.jWTAuthenticationManager = jWTAuthenticationManager;
             this.accountRepository = accountRepository;
@@ -32,12 +33,13 @@ namespace CodingCamp44.Controllers
                 return Unauthorized();
             return Ok(token);
         }
-
         [HttpPost("/Login")]
-        public LoginVM Login([FromBody] LoginVM login)
-        {
-            var user = accountRepository.Login(login.Email, login.Password);
-            return user;
-        }
+       public LoginVM Login([FromBody] LoginVM login)
+       {
+           var user = accountRepository.Login(login.Email, login.Password);
+           return user;
+       }
+
+
     }
 }

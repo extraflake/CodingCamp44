@@ -1,7 +1,6 @@
 ﻿using CodingCamp44.Context;
 using CodingCamp44.Repositories;
 using CodingCamp44.Repositories.Interfaces;
-using CodingCamp44.Handler;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

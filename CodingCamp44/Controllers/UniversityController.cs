@@ -1,6 +1,5 @@
 ﻿using CodingCamp44.Base.Controller;
 using CodingCamp44.Handler;
-using CodingCamp44.Handler;
 using CodingCamp44.Models;
 using CodingCamp44.Repositories.Data;
 using Microsoft.AspNetCore.Authorization;
@@ -13,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UniversityController : BaseController<University, UniversityRepository, int>
@@ -25,5 +24,16 @@ namespace CodingCamp44.Controllers
             this.universityRepository = universityRepository;
             this.jWTAuthenticationManager = jWTAuthenticationManager;
         }
+       /* [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody] UserCred userCred)
+        {
+            var token = jWTAuthenticationManager.Generate(userCred.Username, userCred.Password);
+
+            if (token == null)
+                return Unauthorized();
+
+            return Ok(token);
+        }*/
     }
 }

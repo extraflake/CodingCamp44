@@ -12,11 +12,10 @@ namespace CodingCamp44.Handler
 {
     public static class JwtConfiguration
     {
-        public static void JwtConfigure(this IServiceCollection services, IConfiguration configuration) {
+        public static void JwtConfigure(this IServiceCollection services, IConfiguration configuration) 
+        {
             var key = configuration["Jwt:Key"];
-
             services.AddSingleton<IJWTAuthenticationManager>(new Jwt(key));
-
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -24,16 +23,32 @@ namespace CodingCamp44.Handler
             })
             .AddJwtBearer(x =>
             {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
+                 x.RequireHttpsMetadata = false;
+                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
+                 //new SymmetricSecurityKey(key),
+                 ValidateIssuer = false,
+                 ValidateAudience = false
+            };
             });
+            /*
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = configuration["Jwt:Issuer"],
+                        ValidAudience = configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
+                    };
+                });*/
         }
     }
 }

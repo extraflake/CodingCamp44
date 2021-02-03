@@ -27,8 +27,7 @@ namespace CodingCamp44.Repositories.Data
         private readonly SendEmail sendEmail = new SendEmail();
         private readonly PersonRepository personRepository;
         public IConfiguration Configuration { get; }
-
-        public AccountRepository(MyContext myContext, PersonRepository personRepository, IConfiguration configuration) : base(myContext)
+        public AccountRepository(MyContext myContext, PersonRepository personRepository, IConfiguration configuration) : base (myContext)
         {
             myContext.Set<Account>();
             this.myContext = myContext;
@@ -40,7 +39,7 @@ namespace CodingCamp44.Repositories.Data
         {
             LoginVM result = null;
 
-            string connectStr = Configuration.GetConnectionString("MyConnection");
+            string connectStr = Configuration.GetConnectionString("MyConnection");//ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
             using (IDbConnection db = new SqlConnection(connectStr))
             {
@@ -51,7 +50,7 @@ namespace CodingCamp44.Repositories.Data
             return result;
         }
 
-        public int Register(RegisterVM registerVM)
+	    public int Register(RegisterVM registerVM)
         {
 
             var person = new Person()
@@ -73,26 +72,25 @@ namespace CodingCamp44.Repositories.Data
                 Status = StatusAccount.Active
             };
 
-            var resPerson = personRepository.Create(person);
-
-            myContext.Add(account);
+            var resPerson = personRepository.Create(person); 
+            
+            myContext.Add(account); 
 
             var resAccount = myContext.SaveChanges();
 
-            if (resAccount > 0 && resPerson > 0)
-            {
+            if (resAccount > 0 && resPerson > 0) {
                 return 1;
             }
             else
             {
                 return 0;
             }
-        }
-
+	    }
+        
         public int ResetPassword(Account account, string email)
         {
             var data = myContext.Persons.Where(x => x.Email == email).FirstOrDefault();
-            if (data == null)
+            if(data == null)
             {
                 return 0;
             }
@@ -105,7 +103,7 @@ namespace CodingCamp44.Repositories.Data
             }
         }
 
-        public int ChangePassword(string NIK, string password)
+        public int ChangePassword(string NIK, string password) 
         {
             Account acc = accounts.Find(NIK);
             acc.Password = password;
@@ -113,5 +111,31 @@ namespace CodingCamp44.Repositories.Data
             var result = myContext.SaveChanges();
             return result;
         }
+
+      /*   public Account getByNIK(string NIK) 
+        {
+            var result = myContext.Accounts.Where(a => a.NIK == NIK).FirstOrDefault();
+            return result;
+        }
+
+        public Account GetAccountById(string id)
+        {
+            return accounts.Find(id);
+        }
+
+        public int DeleteAccount(string id)
+        {
+            if (accounts == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            else
+            {
+                Account account = accounts.Find(id);
+                accounts.Remove(account);
+                var result = myContext.SaveChanges();
+                return result;
+            }
+        }*/
     }
 }
