@@ -15,7 +15,7 @@ namespace CodingCamp44.Handler
         public static void JwtConfigure(this IServiceCollection services, IConfiguration configuration) 
         {
             var key = configuration["Jwt:Key"];
-            services.AddSingleton<IJWTAuthenticationManager>(new JWT(key));
+            services.AddSingleton<IJWTAuthenticationManager>(new Jwt(key));
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -34,7 +34,6 @@ namespace CodingCamp44.Handler
                  ValidateAudience = false
             };
             });
-
             /*
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

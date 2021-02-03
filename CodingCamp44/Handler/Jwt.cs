@@ -19,7 +19,6 @@ namespace CodingCamp44.Handler
         public Jwt(string tokenKey)
         {
             this.tokenKey = tokenKey;
-            this.accountRepository = accountRepository;
         }
 
         public string Generate(LoginVM loginVM)
