@@ -111,31 +111,5 @@ namespace CodingCamp44.Repositories.Data
             var result = myContext.SaveChanges();
             return result;
         }
-
-      /*   public Account getByNIK(string NIK) 
-        {
-            var result = myContext.Accounts.Where(a => a.NIK == NIK).FirstOrDefault();
-            return result;
-        }
-
-        public Account GetAccountById(string id)
-        {
-            return accounts.Find(id);
-        }
-
-        public int DeleteAccount(string id)
-        {
-            if (accounts == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-            else
-            {
-                Account account = accounts.Find(id);
-                accounts.Remove(account);
-                var result = myContext.SaveChanges();
-                return result;
-            }
-        }*/
     }
 }

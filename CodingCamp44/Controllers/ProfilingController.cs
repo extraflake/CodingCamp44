@@ -15,7 +15,7 @@ using CodingCamp44.Handler;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProfilingController : BaseController<Profiling, ProfilingRepository, string>
@@ -28,23 +28,6 @@ namespace CodingCamp44.Controllers
            this.profilingRepository = profilingRepository;
            this.jwtAuthenticationManager = jwtAuthenticationManager;
         }
-
-        /*[HttpGet("getByNIK/{NIK}")]
-        public ActionResult getByNIK(string NIK)
-        {
-            var result = profilingRepository.getByNIK(NIK);
-            return Ok(new { result = result, status = "Ok" });
-        }*/
-
-      /*  [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] UserCred userCred)
-        {
-            var token = jwtAuthenticationManager.Generate(userCred.Username, userCred.Password);
-            if (token == null)
-                return Unauthorized();
-            return Ok(token);
-        }*/
     }
 }
 
