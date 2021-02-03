@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProfilingController : BaseController<Profiling, ProfilingRepository, string>

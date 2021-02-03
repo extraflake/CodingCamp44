@@ -166,3 +166,4 @@ C:\Users\asus\Documents\GitHub\CodingCamp44-New\CodingCamp44\CodingCamp44\obj\De
 C:\Users\asus\Documents\GitHub\CodingCamp44-New\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.RazorTargetAssemblyInfo.cache
 C:\Users\asus\Documents\GitHub\CodingCamp44-New\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.csproj.CopyComplete
 C:\Users\asus\Documents\GitHub\CodingCamp44-New\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.genruntimeconfig.cache
+C:\Users\asus\Documents\GitHub\CodingCamp44-New\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.csprojAssemblyReference.cache
