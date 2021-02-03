@@ -7624,11 +7624,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
       "projectName": "CodingCamp44",
       "projectPath": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
       "packagesPath": "C:\\Users\\Tresna_WH\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\obj\\",
+=======
+      "projectUniqueName": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "projectName": "CodingCamp44",
+      "projectPath": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "packagesPath": "C:\\Users\\NaufalAj\\.nuget\\packages\\",
+      "outputPath": "E:\\Project\\CodingCamp\\CodingCamp\\CodingCamp44\\CodingCamp44\\obj\\",
+>>>>>>> development
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tresna_WH\\AppData\\Roaming\\NuGet\\NuGet.Config",
