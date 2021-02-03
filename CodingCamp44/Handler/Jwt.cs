@@ -24,7 +24,6 @@ namespace CodingCamp44.Handler
         {
             if (loginVM != null)
             {
-                var namaLengkap = loginVM.FirstName + " " +loginVM.LastName;
                 //proses konfigurasi yang digunakan untuk create token
                 var tokenHandler = new JwtSecurityTokenHandler();             
                 var key = Encoding.ASCII.GetBytes(tokenKey);
@@ -33,7 +32,7 @@ namespace CodingCamp44.Handler
                     Subject = new ClaimsIdentity(new Claim[]
                     {
                     new Claim("Email", loginVM.Email),
-                    new Claim("Name", namaLengkap),
+                    new Claim("Name", loginVM.Name),
                     new Claim(ClaimTypes.Role, "Admin")
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(20),
