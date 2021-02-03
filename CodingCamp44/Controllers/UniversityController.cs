@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UniversityController : BaseController<University, UniversityRepository, int>
@@ -20,7 +20,7 @@ namespace CodingCamp44.Controllers
         UniversityRepository universityRepository;
         private readonly IJWTAuthenticationManager jWTAuthenticationManager;
         public UniversityController(IJWTAuthenticationManager jWTAuthenticationManager, UniversityRepository universityRepository) : base(universityRepository)
-        { 
+        {
             this.universityRepository = universityRepository;
             this.jWTAuthenticationManager = jWTAuthenticationManager;
         }

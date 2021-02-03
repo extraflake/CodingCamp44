@@ -22,7 +22,7 @@ using CodingCamp44.Handler;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]    
 
@@ -60,14 +60,12 @@ namespace CodingCamp44.Controllers
             }
             return NotFound();
         }
-
         [HttpPut("reset/{email}/{id}")]
         public ActionResult ResetPassword(Account account, string email)
         {
             var data = accountRepository.ResetPassword(account, email);
             return (data > 0) ? (ActionResult)Ok(new { message = "Email has been Sent, password changed", status = "Ok" }) : NotFound(new { message = "Data not exist in our database, please register first", status = 404 });
         }
-
         [HttpPost("Register")]
         public ActionResult Register(RegisterVM registerVM)
         {

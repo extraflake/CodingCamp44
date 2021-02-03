@@ -39,8 +39,7 @@ namespace CodingCamp44.Repositories.Data
         {
             LoginVM result = null;
 
-            string connectStr = Configuration.GetConnectionString("MyConnection");
-
+            string connectStr = Configuration.GetConnectionString("MyConnection");//ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
             using (IDbConnection db = new SqlConnection(connectStr))
             {

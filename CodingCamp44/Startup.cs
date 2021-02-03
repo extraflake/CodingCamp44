@@ -43,10 +43,8 @@ namespace CodingCamp44
             services.AddScoped<ProfilingRepository>();
             services.AddScoped<PersonRepository>();
 	        services.AddScoped<JobRepository>();
-	        services.AddScoped<JobRepository>();
-            services.JwtConfigure(Configuration);
 
-            
+            services.JwtConfigure(Configuration);
         }
        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
