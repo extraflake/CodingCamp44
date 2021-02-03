@@ -16,10 +16,10 @@ namespace CodingCamp44.Controllers
     [ApiController]
     public class EducationController : BaseController<Education, EducationRepository, int>
     {
-        EducationRepository educationRepository1;
+        EducationRepository educationRepository;
         public EducationController(EducationRepository educationRepository) : base(educationRepository)
         {
-            this.educationRepository1 = educationRepository;
+            this.educationRepository = educationRepository;
         }
     }
 }

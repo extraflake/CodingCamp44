@@ -2,6 +2,7 @@
 using CodingCamp44.Models;
 using CodingCamp44.Repositories.Data;
 using CodingCamp44.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RoleController : BaseController<Role, RoleRepository, int>

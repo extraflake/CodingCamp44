@@ -27,7 +27,6 @@ namespace CodingCamp44.Repositories.Data
         private readonly SendEmail sendEmail = new SendEmail();
         private readonly PersonRepository personRepository;
         public IConfiguration Configuration { get; }
-
         public AccountRepository(MyContext myContext, PersonRepository personRepository, IConfiguration configuration) : base (myContext)
         {
             myContext.Set<Account>();
