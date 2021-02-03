@@ -211,7 +211,6 @@ C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\bin\Debug\ne
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.csprojAssemblyReference.cache
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.AssemblyInfoInputs.cache
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.AssemblyInfo.cs
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.csproj.CoreCompileInputs.cache
