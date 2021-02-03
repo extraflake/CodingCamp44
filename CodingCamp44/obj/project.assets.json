@@ -7619,19 +7619,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "projectUniqueName": "C:\\Users\\asus\\Documents\\GitHub\\CodingCamp44-New\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
       "projectName": "CodingCamp44",
-      "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\obj\\",
+      "projectPath": "C:\\Users\\asus\\Documents\\GitHub\\CodingCamp44-New\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asus\\Documents\\GitHub\\CodingCamp44-New\\CodingCamp44\\CodingCamp44\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

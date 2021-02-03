@@ -24,16 +24,5 @@ namespace CodingCamp44.Controllers
             this.universityRepository = universityRepository;
             this.jWTAuthenticationManager = jWTAuthenticationManager;
         }
-       /* [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] UserCred userCred)
-        {
-            var token = jWTAuthenticationManager.Generate(userCred.Username, userCred.Password);
-
-            if (token == null)
-                return Unauthorized();
-
-            return Ok(token);
-        }*/
     }
 }
