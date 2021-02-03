@@ -11,13 +11,17 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Handler
 {
-    public class JWT : IJWTAuthenticationManager
+    public class Jwt : IJWTAuthenticationManager
     {
+        private readonly AccountRepository accountRepository;
         private readonly string tokenKey;
-        public JWT(string tokenKey)
+
+        public Jwt(string tokenKey)
         {
             this.tokenKey = tokenKey;
+            this.accountRepository = accountRepository;
         }
+
         public string Generate(LoginVM loginVM)
         {
             if (loginVM != null)
@@ -30,7 +34,8 @@ namespace CodingCamp44.Handler
                     {
                     new Claim("Name", loginVM.Name),
                     new Claim("Email", loginVM.Email),
-                    new Claim(ClaimTypes.Role, "Admin")
+                    new Claim(ClaimTypes.Role, "admin")
+
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(20),
                     SigningCredentials = new SigningCredentials(
@@ -40,11 +45,12 @@ namespace CodingCamp44.Handler
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 return tokenHandler.WriteToken(token);
             }
-            return "";
+            return "";         
         }
     }
     public interface IJWTAuthenticationManager
     {
         string Generate(LoginVM loginVM);
     }
+
 }
