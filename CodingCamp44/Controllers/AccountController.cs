@@ -59,72 +59,13 @@ namespace CodingCamp44.Controllers
                 }
             }
             return NotFound();
-        }/*
-
-         [HttpGet("getByNIK/{NIK}")]
-        public ActionResult getByNIK(string NIK) 
-        {
-            var result = accountRepository.getByNIK(NIK);
-            return Ok(new { result = result, status = "Ok" });
-        }*/
-
+        }
         [HttpPut("reset/{email}/{id}")]
         public ActionResult ResetPassword(Account account, string email)
         {
             var data = accountRepository.ResetPassword(account, email);
             return (data > 0) ? (ActionResult)Ok(new { message = "Email has been Sent, password changed", status = "Ok" }) : NotFound(new { message = "Data not exist in our database, please register first", status = 404 });
-        }/*
-
-        [HttpGet("get/{id}")]
-        public ActionResult GetAccountById(string id)
-        {
-            var data = accountRepository.GetAccountById(id);
-            return (data != null) ? (ActionResult)Ok(new { data, status = "Ok" }) : NotFound(new { data, status = "Not Found" });
         }
-*//*
-        [HttpDelete("delete/{id}")]
-        public ActionResult DeleteAccount(string id)
-        {
-            if (accountRepository.GetAccountById(id) == null)
-            {
-                return NotFound();
-            }
-            var data = accountRepository.DeleteAccount(id);
-            return Ok(data);
-        }*/
-
-      /*  [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] UserCred userCred)
-        {
-            var token = jWTAuthenticationManager.Generate(userCred.Username, userCred.Password);
-
-            if (token == null)
-                return Unauthorized();
-
-            return Ok(token);
-        }*/
-        /*private string GenerateJSONWebToken(LoginVM userInfo)
-        {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-            var dataPerson = personRepository.GetDataByEmail(userInfo.Email);
-
-            var claims = new[] {
-                new Claim("Email", dataPerson.Email),
-                new Claim("FirstName", dataPerson.FirstName),
-                new Claim("LastName", dataPerson.LastName)
-            };
-
-            var token = new JwtSecurityToken(Configuration["Jwt:Issuer"],
-                Configuration["Jwt:Issuer"],
-                claims,
-                expires: DateTime.Now.AddMinutes(120),
-                signingCredentials: credentials);
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-*/
         [HttpPost("Register")]
         public ActionResult Register(RegisterVM registerVM)
         {
