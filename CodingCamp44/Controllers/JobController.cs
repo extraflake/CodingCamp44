@@ -15,7 +15,7 @@ namespace CodingCamp44.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class JobController : BaseController<Job, JobRepository, int>
     {
         private readonly IJWTAuthenticationManager jwtAuthenticationManager;

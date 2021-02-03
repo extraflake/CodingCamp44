@@ -14,7 +14,7 @@ namespace CodingCamp44.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class RoleController : BaseController<Role, RoleRepository, int>
     {
         public RoleController(RoleRepository roleRepository) : base(roleRepository)

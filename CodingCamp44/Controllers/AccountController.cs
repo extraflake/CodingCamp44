@@ -22,7 +22,7 @@ using static CodingCamp44.Handler.Jwt;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]    
 
