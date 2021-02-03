@@ -12,9 +12,10 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+
     public class RoleController : BaseController<Role, RoleRepository, int>
     {
         public RoleController(RoleRepository roleRepository) : base(roleRepository)

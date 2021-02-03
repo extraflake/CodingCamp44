@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Repositories
 {
+
     public class GeneralRepository<Entity, Context, Id> : IRepository<Entity,Id>
         where Entity : class
         where Context : MyContext

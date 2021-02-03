@@ -1,5 +1,6 @@
 ﻿using CodingCamp44.Handler;
 using CodingCamp44.Repositories.Data;
+using CodingCamp44.Repositories.Interfaces;
 using CodingCamp44.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +18,8 @@ namespace CodingCamp44.Controllers
     {
         private readonly IJWTAuthenticationManager jWTAuthenticationManager;
         private readonly AccountRepository accountRepository;
-        public AuthController( IJWTAuthenticationManager jWTAuthenticationManager, AccountRepository accountRepository)
+
+        public AuthController(IJWTAuthenticationManager jWTAuthenticationManager, AccountRepository accountRepository) 
         {
             this.jWTAuthenticationManager = jWTAuthenticationManager;
             this.accountRepository = accountRepository;

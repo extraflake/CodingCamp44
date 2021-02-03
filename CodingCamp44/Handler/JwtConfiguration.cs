@@ -13,8 +13,10 @@ namespace CodingCamp44.Handler
 {
     public static class JwtConfiguration
     {
-        public static void JwtConfigure(this IServiceCollection services, IConfiguration configuration) {
-            var key = configuration["Jwt:Key"];         
+
+        public static void JwtConfigure(this IServiceCollection services, IConfiguration configuration) 
+        {
+            var key = configuration["Jwt:Key"];            
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

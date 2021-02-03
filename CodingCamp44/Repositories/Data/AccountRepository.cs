@@ -39,7 +39,6 @@ namespace CodingCamp44.Repositories.Data
         public LoginVM Login(string email, string password)
         {
             LoginVM result = null;
-
             string connectStr = Configuration.GetConnectionString("MyConnection");
 
             using (IDbConnection db = new SqlConnection(connectStr))
