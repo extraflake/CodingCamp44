@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {}
+    "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {}
   },
   "projects": {
-    "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {
+    "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+        "projectUniqueName": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
         "projectName": "CodingCamp44",
-        "projectPath": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
-        "packagesPath": "C:\\Users\\NaufalAj\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\CodingCamp\\CodingCamp44\\CodingCamp44\\obj\\",
+        "projectPath": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+        "packagesPath": "C:\\Users\\Tresna_WH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\NaufalAj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tresna_WH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

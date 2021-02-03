@@ -7,20 +7,10 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodingCamp44.JWT
+namespace CodingCamp44.Handler
 {
-    public interface IJWTAuthenticationManager
+    public class Jwt : IJWTAuthenticationManager
     {
-        string Authenticate(string username, string password);
-    }
-    public class JWTAuthenticationManager : IJWTAuthenticationManager
-    {
-        IDictionary<string, string> users = new Dictionary<string, string>
-        {
-            { "test1", "password1" },
-            { "test2", "password2" }
-        };
-
         private readonly string tokenKey;
 
         public JWTAuthenticationManager(string tokenKey)
@@ -51,5 +41,9 @@ namespace CodingCamp44.JWT
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+    }
+    public interface IJWTAuthenticationManager
+    {
+        string Authenticate(string username, string password);
     }
 }
