@@ -26,5 +26,15 @@ namespace CodingCamp44.Controllers
             this.jobRepository = jobRepository;
             this.jwtAuthenticationManager = jwtAuthenticationManager;
         }
+
+      /*  [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody] UserCred userCred)
+        {
+            var token = jwtAuthenticationManager.Generate(userCred.Username, userCred.Password);
+            if (token == null)
+                return Unauthorized();
+            return Ok(token);
+        }*/
     }
 }
