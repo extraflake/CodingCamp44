@@ -29,9 +29,8 @@ namespace CodingCamp44.Handler
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
-                 //new SymmetricSecurityKey(key),
-                 ValidateIssuer = false,
-                 ValidateAudience = false
+                    ValidateIssuer = false,
+                    ValidateAudience = false
             };
             });
         }
