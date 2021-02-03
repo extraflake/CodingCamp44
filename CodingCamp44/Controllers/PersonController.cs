@@ -15,7 +15,7 @@ namespace CodingCamp44.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PersonController : BaseController<Person, PersonRepository, string>
     {
         private readonly IJWTAuthenticationManager jwtAuthenticationManager;

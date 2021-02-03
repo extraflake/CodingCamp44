@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EducationController : BaseController<Education, EducationRepository, int>

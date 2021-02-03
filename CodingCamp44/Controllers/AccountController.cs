@@ -22,7 +22,7 @@ using CodingCamp44.Handler;
 
 namespace CodingCamp44.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
 
