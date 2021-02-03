@@ -1,0 +1,76 @@
+﻿using CodingCamp44.Repositories.Data;
+using CodingCamp44.ViewModels;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CodingCamp44.Handler
+{
+    public class Jwt : IJWTAuthenticationManager
+    {
+<<<<<<< HEAD
+=======
+        private readonly AccountRepository accountRepository;
+>>>>>>> origin/development
+        private readonly string tokenKey;
+
+        public Jwt(string tokenKey)
+        {
+            this.tokenKey = tokenKey;
+        }
+
+        public string Generate(LoginVM loginVM)
+        {
+            if (loginVM != null)
+            {
+<<<<<<< HEAD
+                //proses konfigurasi yang digunakan untuk create token
+                var tokenHandler = new JwtSecurityTokenHandler();             
+=======
+                var tokenHandler = new JwtSecurityTokenHandler();
+>>>>>>> origin/development
+                var key = Encoding.ASCII.GetBytes(tokenKey);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+<<<<<<< HEAD
+                    new Claim("Email", loginVM.Email),
+                    new Claim("Name", loginVM.Name),
+                    new Claim(ClaimTypes.Role, "Admin")
+=======
+                    new Claim("Name", loginVM.Name),
+                    new Claim("Email", loginVM.Email),
+                    new Claim(ClaimTypes.Role, "admin")
+
+>>>>>>> origin/development
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(20),
+                    SigningCredentials = new SigningCredentials(
+                        new SymmetricSecurityKey(key),
+                        SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(token);
+            }
+<<<<<<< HEAD
+            return "";
+=======
+            return "";         
+>>>>>>> origin/development
+        }
+    }
+    public interface IJWTAuthenticationManager
+    {
+        string Generate(LoginVM loginVM);
+    }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/development
+}
