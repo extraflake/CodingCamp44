@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingCamp44", "CodingCamp44\CodingCamp44.csproj", "{0E08AA7F-DD48-4911-90F9-995B621FB2B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC", "WebMVC\WebMVC.csproj", "{79705F0B-5B03-4C2E-8298-EA125F481ECF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC", "WebMVC\WebMVC.csproj", "{05F2527A-B11F-4934-A115-7B96DA0FA0FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{0E08AA7F-DD48-4911-90F9-995B621FB2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E08AA7F-DD48-4911-90F9-995B621FB2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E08AA7F-DD48-4911-90F9-995B621FB2B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79705F0B-5B03-4C2E-8298-EA125F481ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79705F0B-5B03-4C2E-8298-EA125F481ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79705F0B-5B03-4C2E-8298-EA125F481ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79705F0B-5B03-4C2E-8298-EA125F481ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F2527A-B11F-4934-A115-7B96DA0FA0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F2527A-B11F-4934-A115-7B96DA0FA0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F2527A-B11F-4934-A115-7B96DA0FA0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F2527A-B11F-4934-A115-7B96DA0FA0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
