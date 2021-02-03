@@ -1,5 +1,5 @@
 ﻿using CodingCamp44.Base.Controller;
-using CodingCamp44.JWT;
+using CodingCamp44.Handler;
 using CodingCamp44.Models;
 using CodingCamp44.Repositories.Data;
 using CodingCamp44.Repositories.Interfaces;
@@ -16,18 +16,18 @@ namespace CodingCamp44.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class PersonController : BaseController<Person, PersonRepository>
+    public class PersonController : BaseController<Person, PersonRepository, string>
     {
-        private readonly IJwtAuthenticationManager jwtAuthenticationManager;
+        private readonly IJWTAuthenticationManager jwtAuthenticationManager;
         private readonly PersonRepository personRepository;
 
-        public PersonController(IJwtAuthenticationManager jwtAuthenticationManager, PersonRepository personRepository) : base(personRepository) 
+        public PersonController(IJWTAuthenticationManager jwtAuthenticationManager, PersonRepository personRepository) : base(personRepository) 
         {
             this.personRepository = personRepository;
             this.jwtAuthenticationManager = jwtAuthenticationManager;
         }
 
-        [HttpGet("get/{id}")]
+       /* [HttpGet("get/{id}")]
         public ActionResult GetPersonById(string id)
         {
             var data = personRepository.GetPersonById(id);
@@ -50,17 +50,17 @@ namespace CodingCamp44.Controllers
         {
             var result = personRepository.getByNIK(NIK);
             return Ok(new { result = result, status = "Ok" });
-        }
+        }*/
 
-        [AllowAnonymous]
+      /*  [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] UserCred userCred)
         {
-            var token = jwtAuthenticationManager.Authenticate(userCred.Username, userCred.Password);
+            var token = jwtAuthenticationManager.Generate(userCred.Username, userCred.Password);
             if (token == null)
                 return Unauthorized();
             return Ok(token);
-        }
+        }*/
     }
 }
 
