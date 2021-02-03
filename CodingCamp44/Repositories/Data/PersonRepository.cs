@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CodingCamp44.Repositories.Data
 {
-    public class PersonRepository : GeneralRepository<Person, MyContext>
+    public class PersonRepository : GeneralRepository<Person, MyContext, string>
     {
         private readonly MyContext myContext;
         private DbSet<Person> persons;
@@ -19,33 +19,6 @@ namespace CodingCamp44.Repositories.Data
             this.myContext = myContext;
             myContext.Set<Person>();
             persons = myContext.Set<Person>();
-        }
-
-        public Person getByNIK(string NIK)
-        {
-            var result = myContext.Persons.Where(value => value.NIK == NIK).FirstOrDefault();
-            return result;
-        }
-
-        public Person GetPersonById(string id)
-        {
-            return persons.Find(id);
-        }
-
-        public int DeletePerson(string id)
-        {
-
-            if (persons == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-            else
-            {
-                Person person = persons.Find(id);
-                persons.Remove(person);
-                var result = myContext.SaveChanges();
-                return result;
-            }
         }
 
         public Person GetDataByEmail(string email)

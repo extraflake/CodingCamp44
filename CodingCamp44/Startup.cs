@@ -1,6 +1,5 @@
-using CodingCamp44.Auth.JWT;
 using CodingCamp44.Context;
-using CodingCamp44.JWT;
+using CodingCamp44.Handler;
 using CodingCamp44.Repositories.Data;
 using CodingCamp44.Repositories.Interfaces;
 using CodingCamp44.Models;
@@ -44,22 +43,8 @@ namespace CodingCamp44
             services.AddScoped<ProfilingRepository>();
             services.AddScoped<PersonRepository>();
 	        services.AddScoped<JobRepository>();
-	        services.AddScoped<JobRepository>();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["Jwt:Issuer"],
-                        ValidAudience = Configuration["Jwt:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                    };
-                });
+            services.JwtConfigure(Configuration);
         }
        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

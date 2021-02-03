@@ -16,39 +16,42 @@ using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 
 namespace CodingCamp44.Repositories.Data
 {
-    public class AccountRepository : GeneralRepository<Account, MyContext>
+    public class AccountRepository : GeneralRepository<Account, MyContext, string>
     {
         private readonly MyContext myContext;
         private DbSet<Account> accounts;
         private readonly SendEmail sendEmail = new SendEmail();
         private readonly PersonRepository personRepository;
+        public IConfiguration Configuration { get; }
 
-        public AccountRepository(MyContext myContext, PersonRepository personRepository) : base (myContext)
+        public AccountRepository(MyContext myContext, PersonRepository personRepository, IConfiguration configuration) : base(myContext)
         {
             myContext.Set<Account>();
             this.myContext = myContext;
             this.personRepository = personRepository;
+            this.Configuration = configuration;
         }
 
-        public Login_VM LoginTaskSync(string email, string password)
+        public LoginVM Login(string email, string password)
         {
-            Login_VM result = null;
+            LoginVM result = null;
 
-            string connectStr = "Data Source=DESKTOP-ILI17T6;Initial Catalog=CodingCamp44;User ID=sa;Password=sapassword;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+            string connectStr = Configuration.GetConnectionString("MyConnection");
 
             using (IDbConnection db = new SqlConnection(connectStr))
             {
                 string readSp = "sp_retrieve_login";
                 var parameter = new { Email = email, Password = password };
-                result = db.Query<Login_VM>(readSp, parameter, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                result = db.Query<LoginVM>(readSp, parameter, commandType: CommandType.StoredProcedure).FirstOrDefault();
             }
             return result;
         }
 
-	    public int Register(RegisterVM registerVM)
+        public int Register(RegisterVM registerVM)
         {
 
             var person = new Person()
@@ -70,25 +73,26 @@ namespace CodingCamp44.Repositories.Data
                 Status = StatusAccount.Active
             };
 
-            var resPerson = personRepository.Create(person); 
-            
-            myContext.Add(account); 
+            var resPerson = personRepository.Create(person);
+
+            myContext.Add(account);
 
             var resAccount = myContext.SaveChanges();
 
-            if (resAccount > 0 && resPerson > 0) {
+            if (resAccount > 0 && resPerson > 0)
+            {
                 return 1;
             }
             else
             {
                 return 0;
             }
-	    }
-        
+        }
+
         public int ResetPassword(Account account, string email)
         {
             var data = myContext.Persons.Where(x => x.Email == email).FirstOrDefault();
-            if(data == null)
+            if (data == null)
             {
                 return 0;
             }
@@ -101,39 +105,13 @@ namespace CodingCamp44.Repositories.Data
             }
         }
 
-        public int ChangePassword(string NIK, string password) 
+        public int ChangePassword(string NIK, string password)
         {
             Account acc = accounts.Find(NIK);
             acc.Password = password;
             myContext.Entry(acc).State = EntityState.Modified;
             var result = myContext.SaveChanges();
             return result;
-        }
-
-         public Account getByNIK(string NIK) 
-        {
-            var result = myContext.Accounts.Where(a => a.NIK == NIK).FirstOrDefault();
-            return result;
-        }
-
-        public Account GetAccountById(string id)
-        {
-            return accounts.Find(id);
-        }
-
-        public int DeleteAccount(string id)
-        {
-            if (accounts == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-            else
-            {
-                Account account = accounts.Find(id);
-                accounts.Remove(account);
-                var result = myContext.SaveChanges();
-                return result;
-            }
         }
     }
 }
