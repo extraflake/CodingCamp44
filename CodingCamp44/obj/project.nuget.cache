@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oFqiQSmEHCw7O4RaBbKc/kgUSswo7m4j1E2QjiGefz5DDVd/cB7v0cId+OR+fsKOfBZ6esGQhJiQRlQx0e6IwA==",
+  "dgSpecHash": "jOeHeLemHAUpioGA068u9B18HGSkA/ZdyL9l7zkWn8vZ5uvErgXp0j1ljODsBAxsKnjRau8Ss8IgueqMpCYUMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tresna_WH\\Documents\\CodingCamp44\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,7 @@
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\Tresna_WH\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Tresna_WH\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Tresna_WH\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
