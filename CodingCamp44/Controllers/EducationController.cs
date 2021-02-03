@@ -1,5 +1,4 @@
 ﻿using CodingCamp44.Base.Controller;
-using CodingCamp44.JWT;
 using CodingCamp44.Models;
 using CodingCamp44.Repositories.Data;
 using Microsoft.AspNetCore.Authorization;
@@ -15,12 +14,12 @@ namespace CodingCamp44.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class EducationController : BaseController<Education, EducationRepository>
+    public class EducationController : BaseController<Education, EducationRepository, int>
     {
-        EducationRepository educationRepository1;
+        EducationRepository educationRepository;
         public EducationController(EducationRepository educationRepository) : base(educationRepository)
         {
-            this.educationRepository1 = educationRepository;
+            this.educationRepository = educationRepository;
         }
     }
 }

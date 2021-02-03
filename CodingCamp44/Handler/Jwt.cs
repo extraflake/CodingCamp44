@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using CodingCamp44.Repositories.Data;
+using CodingCamp44.ViewModels;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,39 +13,44 @@ namespace CodingCamp44.Handler
 {
     public class Jwt : IJWTAuthenticationManager
     {
+        private readonly AccountRepository accountRepository;
         private readonly string tokenKey;
 
-        public JWTAuthenticationManager(string tokenKey)
+        public Jwt(string tokenKey)
         {
             this.tokenKey = tokenKey;
+            this.accountRepository = accountRepository;
         }
 
-        public string Authenticate(string username, string password)
+        public string Generate(LoginVM loginVM)
         {
-            if (!users.Any(u => u.Key == username && u.Value == password))
+            if (loginVM != null)
             {
-                return null;
-            }
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(tokenKey);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(tokenKey);
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    new Claim(ClaimTypes.Name, username)
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(key),
-                    SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                    new Claim("Name", loginVM.Name),
+                    new Claim("Email", loginVM.Email),
+                    new Claim(ClaimTypes.Role, "admin")
+
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(20),
+                    SigningCredentials = new SigningCredentials(
+                        new SymmetricSecurityKey(key),
+                        SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(token);
+            }
+            return "";         
         }
     }
     public interface IJWTAuthenticationManager
     {
-        string Authenticate(string username, string password);
+        string Generate(LoginVM loginVM);
     }
+
 }

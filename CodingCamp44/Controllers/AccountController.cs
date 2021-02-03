@@ -1,4 +1,3 @@
-using CodingCamp44.Auth.JWT;
 using CodingCamp44.Base.Controller;
 using CodingCamp44.Context;
 using CodingCamp44.Models;
@@ -19,18 +18,19 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CodingCamp44.Handler;
 
 namespace CodingCamp44.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController]    
 
     public class AccountController : BaseController<Account, AccountRepository, string>
     {
         private readonly AccountRepository accountRepository;
         private readonly PersonRepository personRepository;
-
+        
         private IConfiguration Configuration;
         private readonly IJWTAuthenticationManager jWTAuthenticationManager;
 
@@ -43,7 +43,7 @@ namespace CodingCamp44.Controllers
         }
 
         [HttpPut("ChangePassword/{NIK}")]
-        public ActionResult ChangePassword(string NIK, ChangePasswordVM changePasswordVM)
+        public ActionResult ChangePassword(string NIK, ChangePasswordVM changePasswordVM) 
         {
             var acc = accountRepository.Get(NIK);
             if (acc != null)
@@ -53,7 +53,7 @@ namespace CodingCamp44.Controllers
                     var data = accountRepository.ChangePassword(NIK, changePasswordVM.NewPassword);
                     return Ok(data);
                 }
-                else
+                else 
                 {
                     return StatusCode(404, new { status = "404", message = "Wrong password" });
                 }
@@ -83,9 +83,8 @@ namespace CodingCamp44.Controllers
                     return StatusCode(500, new { status = "Internal server error..." });
                 }
             }
-            else
-            {
-                return BadRequest(new { status = "Bad request...", errorMessage = "Data input is not valid..." });
+            else {
+                return BadRequest(new { status = "Bad request...", errorMessage = "Data input is not valid..."});
             }
         }
     }
