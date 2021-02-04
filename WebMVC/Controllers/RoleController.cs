@@ -24,7 +24,41 @@ namespace WebMVC.Controllers
                     roleList = JsonConvert.DeserializeObject<List<RoleVM>>(apiResponse);
                 }
             }
-            return View(roleList);
+            return Json(roleList);
+        }
+
+        public async Task<IActionResult> UpdateRole(int id)
+        {
+            RoleVM roleVM = new RoleVM();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44383/api/Role" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    roleVM = JsonConvert.DeserializeObject<RoleVM>(apiResponse);
+                }
+            }
+            return View(roleVM);
+        }
+
+        [HttpPost("[update]")]
+        public async Task<IActionResult> UpdateRole([FromBody] RoleVM reservation)
+        {
+            RoleVM receivedRole = new RoleVM();
+            using (var httpClient = new HttpClient())
+            {
+                var content = new MultipartFormDataContent();
+                content.Add(new StringContent(reservation.Id.ToString()), "Id");
+                content.Add(new StringContent(reservation.Name), "Name");
+
+                using (var response = await httpClient.PutAsync("https://localhost:44383/api/Role", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    ViewBag.Result = "Success";
+                    receivedRole = JsonConvert.DeserializeObject<RoleVM>(apiResponse);
+                }
+            }
+            return View(receivedRole);
         }
     }
 }
