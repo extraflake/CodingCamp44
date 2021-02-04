@@ -7,7 +7,7 @@ namespace CodingCamp44.ViewModels
 {
     public class RoleVM
     {
-        public int id { get; set; }
-        public int name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
