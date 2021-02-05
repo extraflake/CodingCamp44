@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css" />
+}
+<div class="container-fluid">
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="list-list"></tbody>
+    </table>
+</div>
+@section scripts
+{
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#example").dataTable();
+
+            $.ajax({
+                url: 'https://localhost:44383/api/role',
+                type: 'get',
+                dataType: 'json',
+                success: function (result) {
+                    let daftar = result.results;
+                    var html = '';
+                    $.each(daftar, function (i, data) {
+                        html += `<tr>
+                                                <td> ` + data.id + `</td>
+                                                <td>` + data.name + `</td>
+                                            </tr>`;
+                        //This is selector of my <tbody> in my table
+                        $("#list-list").html(html);
+                    });
+                }
+            });
+        })
+    </script>
+}
+
