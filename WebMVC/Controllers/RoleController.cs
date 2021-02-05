@@ -1,0 +1,103 @@
+﻿using CodingCamp44.Models;
+using CodingCamp44.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WebMVC.Controllers
+{
+    [Route("[controller]")]
+    [Controller]
+    public class RoleController : Controller
+    {
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            List<RoleVM> roleList = new List<RoleVM>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44383/api/Role"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    roleList = JsonConvert.DeserializeObject<List<RoleVM>>(apiResponse);
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] RoleVM roleVM)
+        {
+            RoleVM addRole = new RoleVM();
+            using (var httpClient = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(roleVM), Encoding.UTF8, "application/json");
+
+                using (var response = await httpClient.PostAsync("https://localhost:44383/api/Role/", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    addRole = JsonConvert.DeserializeObject<RoleVM>(apiResponse);
+                    return Ok(new { data = apiResponse });
+                }
+            }
+        }
+
+        [HttpDelete("{roleId}")]
+        public async Task<IActionResult> Delete(int roleId)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync("https://localhost:44383/api/Role/" + roleId))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    return Ok(new { data = apiResponse });
+                }
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] RoleVM roleVM)
+        {
+            RoleVM _roleVM = new RoleVM();
+            using (var httpClient = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(roleVM), Encoding.UTF8, "application/json");
+
+                using (var response = await httpClient.PutAsync("https://localhost:44383/api/Role", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    ViewBag.Result = "Success";
+                    _roleVM = JsonConvert.DeserializeObject<RoleVM>(apiResponse);
+                    return Ok(new { data = apiResponse });
+                }
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetReservation(int id)
+        {
+            RoleVM reservation = new RoleVM();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44324/api/Role/" + id))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        reservation = JsonConvert.DeserializeObject<RoleVM>(apiResponse);
+                    }
+                    else
+                        ViewBag.StatusCode = response.StatusCode;
+                }
+            }
+            return View(reservation);
+        }
+    }
+}
+    
