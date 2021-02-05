@@ -166,4 +166,3 @@ C:\RepoGithub\MCC\MAINPROJECT\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\n
 C:\RepoGithub\MCC\MAINPROJECT\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.dll
 C:\RepoGithub\MCC\MAINPROJECT\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.pdb
 C:\RepoGithub\MCC\MAINPROJECT\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.genruntimeconfig.cache
-C:\RepoGithub\MCC\MAINPROJECT\CodingCamp44\CodingCamp44\CodingCamp44\obj\Debug\netcoreapp3.1\CodingCamp44.csprojAssemblyReference.cache
