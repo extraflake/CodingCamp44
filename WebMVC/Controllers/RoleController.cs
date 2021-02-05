@@ -18,16 +18,6 @@ namespace WebMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            List<RoleVM> roleList = new List<RoleVM>();
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync("https://localhost:44383/api/Role"))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    //var results = response.Content.ReadAsStringAsync().Result;
-                    roleList = JsonConvert.DeserializeObject<List<RoleVM>>(apiResponse);
-                }
-            }
             return View();
         }
         [HttpPost]

@@ -2,6 +2,7 @@
 using CodingCamp44.Models;
 using CodingCamp44.Repositories.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,6 +15,7 @@ namespace CodingCamp44.Controllers
     //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class EducationController : BaseController<Education, EducationRepository, int>
     {
         EducationRepository educationRepository;

@@ -19,12 +19,14 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using CodingCamp44.Handler;
+using Microsoft.AspNetCore.Cors;
 
 namespace CodingCamp44.Controllers
 {
     //[Authorize]
     [Route("api/[controller]")]
-    [ApiController]    
+    [ApiController]
+    [EnableCors("AllowOrigin")]
 
     public class AccountController : BaseController<Account, AccountRepository, string>
     {

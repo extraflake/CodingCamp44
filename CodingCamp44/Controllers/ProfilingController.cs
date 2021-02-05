@@ -11,13 +11,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CodingCamp44.Handler;
+using Microsoft.AspNetCore.Cors;
 
 namespace CodingCamp44.Controllers
 {
     //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class ProfilingController : BaseController<Profiling, ProfilingRepository, string>
     {
         private readonly IJWTAuthenticationManager jwtAuthenticationManager;

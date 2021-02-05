@@ -2,6 +2,7 @@
 using CodingCamp44.Repositories;
 using CodingCamp44.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,7 +15,7 @@ namespace CodingCamp44.Base.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-
+    [EnableCors("AllowOrigin")]
     public class BaseController<Entity, Repository, Id> : ControllerBase
         where Entity : class
         where Repository : IRepository<Entity, Id>
