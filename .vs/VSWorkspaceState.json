@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CodingCamp44"
+    "\\CodingCamp44",
+    "\\CodingCamp44\\ViewModels",
+    "\\WebMVC"
   ],
   "SelectedNode": "\\CodingCamp44",
-  "PreviewInSolutionExplorer": false
+  "PreviewInSolutionExplorer": true
 }

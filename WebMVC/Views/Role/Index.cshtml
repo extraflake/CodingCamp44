@@ -1,0 +1,39 @@
+﻿@model CodingCamp44.ViewModels.RoleVM
+
+@{ ViewData["Title"] = "Index"; }
+
+<h2>Table Role</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Actions
+            </th>
+
+        </tr>
+
+        @for (int i = 0; i < Model.data.Count; i++)
+        {
+            <tr>
+                <td>@Model.data[i].Id</td>
+                <td>@Model.data[i].Name</td>
+                <td>
+                    @Html.ActionLink("Update", "Update", new { Id = Model.data[i].Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { Id = Model.data[i].Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = Model.data[i].Id })
+                </td>
+            </tr>
+        }
+    </thead>
+</table>

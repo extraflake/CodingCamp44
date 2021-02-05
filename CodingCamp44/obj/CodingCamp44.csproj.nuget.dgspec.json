@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {}
+    "F:\\Kerja\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {
+    "F:\\Kerja\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+        "projectUniqueName": "F:\\Kerja\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
         "projectName": "CodingCamp44",
-        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\CodingCamp44-v2\\CodingCamp44\\CodingCamp44\\obj\\",
+        "projectPath": "F:\\Kerja\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
+        "packagesPath": "C:\\Users\\yohan\\.nuget\\packages\\",
+        "outputPath": "F:\\Kerja\\CodingCamp44\\CodingCamp44\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yohan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,6 +73,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[6.8.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
