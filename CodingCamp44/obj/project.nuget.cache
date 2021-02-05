@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZBPNB1YYIcTEagITVOBbfhIPL4RvGuDHt8siVkHlrvgMZWYEnudURFIuEADBfNB2LSF1UEg68IINZdXFWepaCg==",
+  "dgSpecHash": "673rSKtF3R8UfJ835QaLNsNX4Q0xf+NpdDlFh2/k85mBumK2QsOP2I+aYDPuunkdT0yKjLmN5NoB1En3A8d3RQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\asus\\Documents\\GitHub\\CodingCamp44-New\\CodingCamp44\\CodingCamp44\\CodingCamp44.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,7 @@
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\asus\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
