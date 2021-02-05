@@ -82,3 +82,4 @@ C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\WebMVC\obj\Debug\netcorea
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.pdb
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.genruntimeconfig.cache
 C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csprojAssemblyReference.cache
+C:\Users\Tresna_WH\Documents\CodingCamp44\CodingCamp44\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
