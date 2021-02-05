@@ -44,6 +44,11 @@ namespace CodingCamp44
             services.AddScoped<PersonRepository>();
 	        services.AddScoped<JobRepository>();
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
+
             services.JwtConfigure(Configuration);
         }
        
@@ -55,7 +60,7 @@ namespace CodingCamp44
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(options => options.AllowAnyOrigin());
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
