@@ -44,14 +44,11 @@ namespace CodingCamp44
             services.AddScoped<PersonRepository>();
 	        services.AddScoped<JobRepository>();
 
-            //services.AddCors(c =>
-            //{
-            //    c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44317"));
-            //});
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44317"));
             });
+
             services.JwtConfigure(Configuration);
         }
        
@@ -63,12 +60,11 @@ namespace CodingCamp44
             }
 
             app.UseHttpsRedirection();
-            //app.UseCors(options => options.WithOrigins("https://localhost:44317"));
             
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.WithOrigins("https://localhost:44317"));
             app.UseEndpoints(endpoints =>
             {
                 //endpoints.MapControllers();
