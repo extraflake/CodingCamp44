@@ -47,27 +47,20 @@ namespace CodingCamp44.Base.Controller
             if (entity == null)
                 return BadRequest(new { status = "Bad Request", errorMessage = "All input data need to be inserted" });
             var data = repository.Create(entity);
-            return (data != 0) ? (ActionResult)Ok(new { data = data, status = "Ok" }) : StatusCode(500, new { status = "Internal Server Error", errorMessage = "Failed to input the data" }); 
+            return (data != 0) ? (ActionResult)Ok(new {status = "Ok" }) : StatusCode(500, new { status = "Internal Server Error", errorMessage = "Failed to input the data" }); 
         }
 
         [HttpPut]
-        public ActionResult Update(Id id,Entity entity)
+        public ActionResult Update(Entity entity)
         {
-            if (repository.Get(id) != null)
+            try
             {
-            	return NotFound("ID Not Found");
+                var data = repository.Update(entity);
+                return Ok(new {status = "Ok" });
             }
-            else
+            catch (Exception)
             {
-                try
-                {
-                    var data = repository.Update(id, entity);
-                    return Ok(new { data = data, status = "Ok" });
-                }
-                catch (Exception)
-                {
-		            return StatusCode(500, new { status = "Internal Server Error", errorMessage = "Failed to input the data" });
-                }
+                return StatusCode(500, new { status = "Internal Server Error", errorMessage = "Failed to input the data" });
             }
         }
 
