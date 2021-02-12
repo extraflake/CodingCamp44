@@ -62,26 +62,26 @@ namespace CodingCamp44.Repositories
             return entities.Find(id);
         }
 
-        public int Update(Id id, Entity entity)
+        public int Update(Entity entity)
         {
             if (entity == null)
             {
-            	throw new ArgumentNullException("entity");
-	    }
+                throw new ArgumentNullException("entity");
+            }
             else
             {
-            	try
-            	{
-                     myContext.Entry(entity).State = EntityState.Modified;
-                        var result = myContext.SaveChanges();
-                        return result;
-                    }
-
-                    catch (Exception)
-                    {
-                        throw;
-                    }
+                try
+                {
+                    myContext.Entry(entity).State = EntityState.Modified;
+                    var result = myContext.SaveChanges();
+                    return result;
                 }
+
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
     }
 }

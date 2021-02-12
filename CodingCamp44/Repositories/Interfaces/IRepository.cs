@@ -10,7 +10,7 @@ namespace CodingCamp44.Repositories.Interfaces
         IEnumerable<Entity> Get();
         Entity Get(Id id); 
         int Create(Entity entity);
-        int Update(Id id, Entity entity);
+        int Update(Entity entity);
         int Delete(Id id);
     }
 }
